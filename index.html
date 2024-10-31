@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <link rel="shortcut icon" href="#">
   <title>Decryption Tech Test</title>
   <script src="script.js" defer></script>
@@ -12,17 +12,32 @@
 <body>
 <main>
   <h1>Decryption Tech Test</h1>
-  <h2>Project set by iOAcademy</h2>
+  <h2>Project set by iO Academy</h2>
+  <p>Select ENCRYPT to transform text into a series of numbers.<br>
+  Each time you click submit, you will receive a different set of numbers,
+    but they will always DECRYPT to the same result.</p>
+  <div class="centredContainer">
+    <p>What do you want to do?</p>
+    <div class="buttonBox">
+      <button type="button" id="encrypt-button">Encrypt</button>
+      <button type="button" id="decrypt-button">Decrypt</button>
+    </div>
+  </div>
 
-  <form method="post" id="decrypt-form">
-    <label>Enter encrypted message here: <input type="text" inputmode="numeric" name="code-input" id="code-input" required></label>
-    <input type="submit">
+  <form method="post" id="decrypt-form" hidden>
+    <label>Decryption - numbers and spaces only:</label>
+    <input type="text" autocomplete="off" inputmode="numeric" name="code-input" id="code-input" required class="input-text">
+    <input type="submit" class="submit-button">
   </form>
-  <form method="post" id="encrypt-form">
-    <label>Enter message to encrypt here: <input type="text" name="message-input" id="message-input" required></label>
-    <input type="submit">
+  <form method="post" id="encrypt-form" hidden>
+    <label>Encryption - letters and spaces only:</label>
+    <input type="text" autocomplete="off" name="message-input" id="message-input" required class="input-text">
+    <input type="submit" class="submit-button">
   </form>
-  <h1 class="result"></h1>
+  <p class="result"></p>
 </main>
+<footer>
+  <p>A Joseph Padfield Production</p>
+</footer>
 </body>
 </html>

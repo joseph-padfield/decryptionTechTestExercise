@@ -3,9 +3,41 @@ const decryptInput = document.getElementById('code-input')
 const encryptForm = document.getElementById("encrypt-form")
 const encryptInput = document.getElementById('message-input')
 const result = document.querySelector('.result')
+const encryptButton = document.getElementById('encrypt-button')
+const decryptButton = document.getElementById('decrypt-button')
 
 const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+encryptButton.addEventListener('click', e => {
+    if (encryptForm.hasAttribute('hidden')) {
+        encryptForm.removeAttribute('hidden')
+        decryptForm.setAttribute('hidden', '')
+        encryptInput.value = ''
+        decryptInput.value = ''
+    }
+    else {
+        encryptForm.setAttribute('hidden', '')
+        encryptInput.value = ''
+        decryptInput.value = ''
+        result.textContent = ''
+    }
+})
+
+decryptButton.addEventListener('click', e => {
+    if (decryptForm.hasAttribute('hidden')) {
+        decryptForm.removeAttribute('hidden')
+        encryptForm.setAttribute('hidden', '')
+        encryptInput.value = ''
+        decryptInput.value = ''
+    }
+    else {
+        decryptForm.setAttribute('hidden', '')
+        encryptInput.value = ''
+        decryptInput.value = ''
+        result.textContent = ''
+    }
+})
 
 decryptForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -22,7 +54,7 @@ decryptForm.addEventListener('submit', (e) => {
         return false
     }
 
-    result.textContent = "Decrypted message: " + decrypt(encryptedArray)
+    result.textContent = "Decrypted message:" + decrypt(encryptedArray)
 })
 
 encryptForm.addEventListener('submit', (e) => {
@@ -34,7 +66,7 @@ encryptForm.addEventListener('submit', (e) => {
             encryptInput.value = ""
         }
         else {
-            result.textContent = "Encrypted message: " + encrypt(message).join(' ')
+            result.textContent = "Encrypted message:" + encrypt(message).join(' ')
         }
     })
 })
@@ -76,7 +108,11 @@ const encrypt = (str) => {
     array.forEach((item) => {
         if (item === ' ') {
             let space = Math.floor((Math.random() * 8)) * Math.pow(27, Math.floor((Math.random() * 10)))
-            space === 27 ? space = (Math.floor(space/27)) : space = space
+            let reducedSpace = space/27
+            while (reducedSpace > 33) {
+                reducedSpace /= 27
+            }
+            reducedSpace === 27 || space === 27 ? space = (Math.floor(reducedSpace % 27)) : space = space
             res.push(space)
         } else {
             res.push(charToNum[item] * Math.pow(27, Math.floor((Math.random() * 10))))

@@ -1,0 +1,134 @@
+$mainFont: "Andale Mono", monospace;
+$border: 2px solid #daead1;
+$fontColour: #59ff02;
+$buttonBackground: black;
+$textGlow: rgb(125, 170, 105) 0 0 6px;
+$titleTextGlow: rgb(125, 170, 105) 0 0 20px;
+$inset-box-shadow-effect: 5px 5px 5px rgb(0, 0, 0) inset, -2px -2px 10px rgb(48, 48, 48) inset, -3px -3px 10px rgb(48, 48, 48);
+$borderRadius: 7px;
+$textPadding: 0.5rem;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  background-color: black;
+  margin: 0.5rem;
+  border: $border;
+  border-radius: $borderRadius;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h1 {
+  font-family: $mainFont;
+  color: $fontColour;
+  padding: $textPadding;
+  margin: 0;
+  text-shadow: $titleTextGlow;
+}
+
+h2 {
+  font-family: $mainFont;
+  color: $fontColour;
+  padding: $textPadding;
+  margin: 0;
+  text-shadow: $titleTextGlow;
+}
+
+.centredContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  font-family: $mainFont;
+  color: $fontColour;
+  text-shadow: $textGlow;
+  padding: $textPadding;
+  line-height: 1.5rem;
+}
+
+button {
+  font-family: $mainFont;
+  color: $fontColour;
+  text-shadow: $textGlow;
+  padding: $textPadding;
+  background-color: $buttonBackground;
+  width: 8rem;
+  border: $border;
+  transition: color 0.5s, border-color 0.5s;
+}
+
+button:hover {
+  color: yellow;
+  border-color: yellow;
+}
+
+button:active {
+  text-shadow: rgb(239, 202, 9) 0 0 10px;
+  box-shadow: rgb(239, 202, 9) 0 0 10px;
+}
+
+.buttonBox {
+  display: flex;
+  gap: 1rem;
+  padding: $textPadding;
+}
+
+form {
+  border: $border;
+  border-radius: $borderRadius;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-family: $mainFont;
+  color: $fontColour;
+  text-shadow: $textGlow;
+}
+
+.input-text {
+  font-family: $mainFont;
+  color: white;
+  background-color: #222222;
+  box-shadow: $inset-box-shadow-effect;
+  border: 1px solid black;
+  border-radius: $borderRadius;
+  text-shadow: $textGlow;
+  padding: 0.5rem;
+}
+
+.submit-button {
+  font-family: $mainFont;
+  color: $fontColour;
+  background-color: $buttonBackground;
+  width: fit-content;
+  text-shadow: $textGlow;
+}
+
+.result {
+  font-family: $mainFont;
+  color: $fontColour;
+  text-shadow: $textGlow;
+}
+
+footer {
+  p {
+    font-family: $mainFont;
+    color: $fontColour;
+    font-size: 0.7rem;
+    text-shadow: $textGlow;
+  }
+}
