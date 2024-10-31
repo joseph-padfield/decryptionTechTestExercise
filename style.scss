@@ -1,9 +1,9 @@
 $mainFont: "Andale Mono", monospace;
 $border: 2px solid #daead1;
-$fontColour: #59ff02;
+$fontColour: #79fffd;
 $buttonBackground: black;
-$textGlow: rgb(125, 170, 105) 0 0 6px;
-$titleTextGlow: rgb(125, 170, 105) 0 0 20px;
+$textGlow: rgb(105, 170, 150) 0 0 6px;
+$titleTextGlow: rgb(105, 170, 143) 0 0 20px;
 $inset-box-shadow-effect: 5px 5px 5px rgb(0, 0, 0) inset, -2px -2px 10px rgb(48, 48, 48) inset, -3px -3px 10px rgb(48, 48, 48);
 $borderRadius: 7px;
 $textPadding: 0.5rem;
@@ -13,18 +13,34 @@ $textPadding: 0.5rem;
   box-sizing: border-box;
 }
 
-body {
+html, body {
   padding: 1rem;
-  background-color: black;
-  margin: 0.5rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
   border: $border;
   border-radius: $borderRadius;
+  max-width: 1000px;
+
+}
+
+.background-container {
+  background-image: url("background.png");
+  background-position-x: center;
+  background-position-y: top ;
 }
 
 main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.52);
 }
 
 h1 {
@@ -120,15 +136,33 @@ label {
 
 .result {
   font-family: $mainFont;
-  color: $fontColour;
-  text-shadow: $textGlow;
+  color: yellow;
+  text-shadow: rgb(251, 237, 167) 0 0 20px;;
 }
 
 footer {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.52);
   p {
     font-family: $mainFont;
     color: $fontColour;
     font-size: 0.7rem;
     text-shadow: $textGlow;
   }
+}
+
+#github-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.55);
+  padding: 0.1rem;
+  border-radius: 50%;
+}
+
+#github-icon:hover {
+  background-color: #ffba24;
+  border-color: yellow;
+  box-shadow: 1px 1px 10px rgba(246, 243, 205, 0.85);
 }

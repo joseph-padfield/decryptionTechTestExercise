@@ -2,34 +2,49 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   padding: 1rem;
-  background-color: black;
-  margin: 0.5rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
   border: 2px solid #daead1;
   border-radius: 7px;
+  max-width: 1000px;
+}
+
+.background-container {
+  background-image: url("background.png");
+  background-position-x: center;
+  background-position-y: top;
 }
 
 main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.52);
 }
 
 h1 {
   font-family: "Andale Mono", monospace;
-  color: #59ff02;
+  color: #79fffd;
   padding: 0.5rem;
   margin: 0;
-  text-shadow: rgb(125, 170, 105) 0 0 20px;
+  text-shadow: rgb(105, 170, 143) 0 0 20px;
 }
 
 h2 {
   font-family: "Andale Mono", monospace;
-  color: #59ff02;
+  color: #79fffd;
   padding: 0.5rem;
   margin: 0;
-  text-shadow: rgb(125, 170, 105) 0 0 20px;
+  text-shadow: rgb(105, 170, 143) 0 0 20px;
 }
 
 .centredContainer {
@@ -40,16 +55,16 @@ h2 {
 
 p {
   font-family: "Andale Mono", monospace;
-  color: #59ff02;
-  text-shadow: rgb(125, 170, 105) 0 0 6px;
+  color: #79fffd;
+  text-shadow: rgb(105, 170, 150) 0 0 6px;
   padding: 0.5rem;
   line-height: 1.5rem;
 }
 
 button {
   font-family: "Andale Mono", monospace;
-  color: #59ff02;
-  text-shadow: rgb(125, 170, 105) 0 0 6px;
+  color: #79fffd;
+  text-shadow: rgb(105, 170, 150) 0 0 6px;
   padding: 0.5rem;
   background-color: black;
   width: 8rem;
@@ -84,8 +99,8 @@ form {
 
 label {
   font-family: "Andale Mono", monospace;
-  color: #59ff02;
-  text-shadow: rgb(125, 170, 105) 0 0 6px;
+  color: #79fffd;
+  text-shadow: rgb(105, 170, 150) 0 0 6px;
 }
 
 .input-text {
@@ -95,29 +110,49 @@ label {
   box-shadow: 5px 5px 5px rgb(0, 0, 0) inset, -2px -2px 10px rgb(48, 48, 48) inset, -3px -3px 10px rgb(48, 48, 48);
   border: 1px solid black;
   border-radius: 7px;
-  text-shadow: rgb(125, 170, 105) 0 0 6px;
+  text-shadow: rgb(105, 170, 150) 0 0 6px;
   padding: 0.5rem;
 }
 
 .submit-button {
   font-family: "Andale Mono", monospace;
-  color: #59ff02;
+  color: #79fffd;
   background-color: black;
   width: fit-content;
-  text-shadow: rgb(125, 170, 105) 0 0 6px;
+  text-shadow: rgb(105, 170, 150) 0 0 6px;
 }
 
 .result {
   font-family: "Andale Mono", monospace;
-  color: #59ff02;
-  text-shadow: rgb(125, 170, 105) 0 0 6px;
+  color: yellow;
+  text-shadow: rgb(251, 237, 167) 0 0 20px;
 }
 
+footer {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.52);
+}
 footer p {
   font-family: "Andale Mono", monospace;
-  color: #59ff02;
+  color: #79fffd;
   font-size: 0.7rem;
-  text-shadow: rgb(125, 170, 105) 0 0 6px;
+  text-shadow: rgb(105, 170, 150) 0 0 6px;
+}
+
+#github-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.55);
+  padding: 0.1rem;
+  border-radius: 50%;
+}
+
+#github-icon:hover {
+  background-color: #ffba24;
+  border-color: yellow;
+  box-shadow: 1px 1px 10px rgba(246, 243, 205, 0.85);
 }
 
 /*# sourceMappingURL=style.css.map */

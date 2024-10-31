@@ -41,7 +41,7 @@ decryptButton.addEventListener('click', e => {
 
 decryptForm.addEventListener('submit', (e) => {
     e.preventDefault()
-    const encryptedArray = decryptInput.value.split(' ')
+    const encryptedArray = decryptInput.value.trim().split(' ')
     const encryptedArrayNumeric = encryptedArray.map((item) => {
         return parseInt(item)
     })
@@ -50,11 +50,11 @@ decryptForm.addEventListener('submit', (e) => {
     }
     if (containsNan(encryptedArrayNumeric) === true) {
         decryptInput.value = ""
-        result.textContent = "Encrypted messages may only contain numbers"
+        result.textContent = "ENCRYPTED MESSAGES MAY ONLY CONTAIN NUMBERS AND SPACES"
         return false
     }
 
-    result.textContent = "Decrypted message:" + decrypt(encryptedArray)
+    result.textContent = "RESULT: " + decrypt(encryptedArray)
 })
 
 encryptForm.addEventListener('submit', (e) => {
@@ -62,11 +62,11 @@ encryptForm.addEventListener('submit', (e) => {
     const message = encryptInput.value
     message.split('').forEach((item) => {
         if (!letters.includes(item.toLowerCase()) && item !== ' ') {
-            result.textContent = "Messages can only contain letters from a-z"
+            result.textContent = "MESSAGES MAY ONLY CONTAIN LETTERS A-Z"
             encryptInput.value = ""
         }
         else {
-            result.textContent = "Encrypted message:" + encrypt(message).join(' ')
+            result.textContent = "RESULT: " + encrypt(message).join(' ')
         }
     })
 })
