@@ -5,9 +5,9 @@
 This exercise focuses on implementing a substitution cipher with special properties designed to test both encryption variability and decryption consistency.
 
 ## Requirements
-	•	Variable encryption output:
+- Variable encryption output:
 Each time a plaintext message is encrypted, it should produce a different ciphertext — even if the plaintext is identical. The encryption process must introduce randomness or dynamic behavior.
-	•	Stable decryption:
+- Stable decryption:
 Despite the variability in encryption results, decrypting the ciphertext must always reliably recover the original plaintext, without any loss of information.
 
 ## Demonstration
@@ -18,7 +18,7 @@ Despite the variability in encryption results, decrypting the ciphertext must al
 
 In all cases, decrypting any of the ciphertexts returns exactly: hello world
 
-[Test it here:](https://joseph-padfield.github.io/decryptionTechTestExercise/)
+[Test it here](https://joseph-padfield.github.io/decryptionTechTestExercise/)
 
-Notes
-	•	Focus on designing an encryption system that is both non-deterministic (variable outputs) and lossless (perfect decryption).
+## Notes
+Focus on designing an encryption system that is both non-deterministic (variable outputs) and lossless (perfect decryption).
